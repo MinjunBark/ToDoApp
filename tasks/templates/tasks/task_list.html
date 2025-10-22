@@ -1,0 +1,68 @@
+{% extends 'tasks/base.html' %}
+
+{%block content%}
+
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h2 class="mb-0"> My To-Do List </h2>
+    </div>
+    <div class="card-body">
+        <form method="POST" action="{%url 'task-create' %}" class="mb-4">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{form.title}}
+            </div>
+
+            <div class="mb-3">
+                {{form.description}}
+            </div>
+
+            <button type="submit" class="btn btn-primary"> Add Task </button>
+        </form>
+
+        <hr>
+
+        {% if tasks %}
+            <div class="list-group">
+                {% for task in tasks %}
+                <div class="list-group-item task-item d-flex justify-content-between align-items-start">
+                    <div class="flex-grow-1">
+                        <h5 class="mb-1 {% if task.completed %}completed{% endif %}">
+                            {{task.title}}
+                        </h5>
+                        {% if task.description %}
+                        <p class = "mb-1 text-muted {% if task.completed %} completed {% endif %}">
+                            {{task.description}}
+                        </p>
+                        {% endif %}
+                        <small class = "text-muted">
+                            Created: {{task.created_at | date:"M d, Y H:i" }}
+                        </small>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <form method="POST" action="{% url 'task-toggle' task.pk %}" class="d-inline">
+                            {%csrf_token%}
+                            <button type="submit" class="btn btn-sm btn-{% if task.completed %}warning{%else%}success{%endif%}">
+                                {% if task.completed %}Undo{% else %}Completed{% endif %}
+                            </button>
+                        </form>
+                        <form method="POST" action= "{% url 'task-delete' task.pk%}" class="d-inline">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="alert alert-info">
+                No tasks yet. Add your first task above!
+            </div>
+        {%endif%}
+        </div>
+    </div>
+</div>
+{%endblock%}
+
