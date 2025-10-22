@@ -17,24 +17,16 @@ ToDoApp is a lightweight Django-based to-do list application that provides a sim
 Screenshot
 ----------
 
-Add a screenshot image to showcase the UI. Save an image file (e.g., `screenshot.png`) at the project root or `docs/` and insert it here using markdown:
-
-```markdown
-![ToDoApp screenshot](screenshot.png)
 ```
-
-You provided screenshots; place them in the repo (e.g., `docs/screenshots/`) and reference them like this:
-
-```markdown
-![Home screen](docs/screenshots/screen1.png)
-![Add and list tasks](docs/screenshots/screen2.png)
-![Completed and deleted states](docs/screenshots/screen3.png)
+![Home screen](docs/screenshots/Main_UI.png)
+![Add and list tasks](docs/screenshots/Adding_Task.png)
+![Completed and deleted states](docs/screenshots/Completed_Task.png)
 ```
 
 To get started
 --------------
 
-Follow these steps to get the project running locally and to install the Django "task" app (the `api` app) so task models and admin are available.
+Follow these steps to get the project running locally and to install the Django "task" app (the `tasks` app) so task models and admin are available.
 
 1) Create and activate a virtual environment
 
