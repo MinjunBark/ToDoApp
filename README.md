@@ -18,9 +18,9 @@ Screenshot
 ----------
 
 ```
-![Home screen](docs/screenshots/Main_UI.png)
-![Add and list tasks](docs/screenshots/Adding_Task.png)
-![Completed and deleted states](docs/screenshots/Completed_Task.png)
+![Home screen](https://github.com/MinjunBark/ToDoApp/blob/a645fbabfd539ffbd39d7d8bc1661f5c6e50f092/docs/screenshots/Main_UI.png)
+![Add and list tasks](https://github.com/MinjunBark/ToDoApp/blob/a645fbabfd539ffbd39d7d8bc1661f5c6e50f092/docs/screenshots/Adding_Task.png)
+![Completed and deleted states](https://github.com/MinjunBark/ToDoApp/blob/a645fbabfd539ffbd39d7d8bc1661f5c6e50f092/docs/screenshots/Completed_Task.png)
 ```
 
 To get started
